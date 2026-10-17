@@ -1,0 +1,17 @@
+name: Build
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+      - run: dotnet build SemLimites.csproj -c Release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SemLimites-dll
+          path: bin/Release/net6.0/SemLimites.dll
