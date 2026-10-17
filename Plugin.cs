@@ -14,7 +14,7 @@ namespace SemLimites
     [BepInPlugin("dev.semlimites.among", "SemLimites", "1.0.0")]
     [BepInProcess("Among Us.exe")]
     [BepInDependency(ReactorPlugin.Id)]
-    [ReactorModFlags(ModFlags.None)]
+    [ReactorModFlags(Reactor.Networking.ModFlags.None)]
     public class SemLimitesPlugin : BasePlugin
     {
         public static ConfigEntry<float> MaxValue;
